@@ -192,10 +192,28 @@ typedef enum {
 
 const int	ASYNC_PLAYER_TOURNEY_STATUS_BITS = idMath::BitsForInteger( PTS_NUM_STATES );
 
+enum characterClass{
+		Fighter,
+		Bard,
+		Ranger,
+		Wizard,
+	};
+
 class idInventory {
 public:
 	int						maxHealth;
 	int						weapons;
+
+	
+	enum characterClass playerClass;
+
+	int						strStat;
+	int						dexStat;
+	int						conStat;
+	int						intStat;
+	int						wisStat;
+	int						chaStat;
+
 // RITUAL BEGIN
 // squirrel: Mode-agnostic buymenus
 	int						carryOverWeapons;
