@@ -1977,7 +1977,7 @@ void idPlayer::Spawn( void ) {
 		}
 // RAVEN BEGIN
 // mekberg: set to blaster now and disable the weapon.
-		idealWeapon = SlotForWeapon ( "weapon_blaster" ); 
+		idealWeapon = SlotForWeapon ( "weapon_gauntlet" ); 
 		Event_DisableWeapon( );
 // RAVEN END
 	} else {
