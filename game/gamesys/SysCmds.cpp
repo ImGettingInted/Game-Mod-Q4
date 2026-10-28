@@ -3021,29 +3021,69 @@ void Cmd_CheckSave_f( const idCmdArgs &args );
 void Cmd_ShuffleTeams_f( const idCmdArgs& args ) {
 	gameLocal.mpGame.ShuffleTeams();
 }
+
+void Cmd_QueuePlayerClass_f(const idCmdArgs& args)
+{
+	const char* clss = args.Argv(1);
+
+	if (idStr::Icmp(clss, "fighter") == 0)
+	{
+		gameLocal.QueuePlayerClass(1);
+	}
+	else if (idStr::Icmp(clss, "bard") == 0)
+	{
+		gameLocal.QueuePlayerClass(2);
+	}
+	else if (idStr::Icmp(clss, "ranger") == 0)
+	{
+		gameLocal.QueuePlayerClass(3);
+	}
+	else if (idStr::Icmp(clss, "wizard") == 0)
+	{
+		gameLocal.QueuePlayerClass(4);
+
+	}
+	else
+	{
+		gameLocal.Printf("Invalid Command Structure");
+		return;
+	}
+}
+void Cmd_QueuePlayerStat_f(const idCmdArgs& args)
+{
+	//Stat to change
+	idStr stat = args.Argv(1);
+	//Number that the Stat will become
+	int num = atoi(args.Argv(2));
+	gameLocal.QueuePlayerStat(stat, num);
+}
+
 void Cmd_SetPlayerClass_f(const idCmdArgs& args)
 {
+	if (gameLocal.GetLocalPlayer() == NULL) {
+		gameLocal.Warning("Cmd_Emote_f() - local player is NULL");
+		return;
+	}
 	idPlayer* player;
 	player = gameLocal.GetLocalPlayer();
-
-	idStr str = args.Argv(1);
+	const char* clss = args.Argv(1);
 	
-	if (idStr::Icmp(str, "fighter") == 0)
+	if (idStr::Icmp(clss, "fighter") == 0)
 	{
 		player->inventory.SetPlayerClass(1);
 	}
-	else if (idStr::Icmp(str, "bard") == 0)
+	else if (idStr::Icmp(clss, "bard") == 0)
 	{
 		player->inventory.SetPlayerClass(2);
 	}
-	else if (idStr::Icmp(str, "ranger") == 0)
+	else if (idStr::Icmp(clss, "ranger") == 0)
 	{
 		player->inventory.SetPlayerClass(3);
 	}
-	else if (idStr::Icmp(str, "wizard") == 0)
+	else if (idStr::Icmp(clss, "wizard") == 0)
 	{
 		player->inventory.SetPlayerClass(4);
-		
+
 	}
 	else
 	{
@@ -3054,6 +3094,10 @@ void Cmd_SetPlayerClass_f(const idCmdArgs& args)
 
 void Cmd_SetPlayerStat_f(const idCmdArgs& args)
 {
+	if (gameLocal.GetLocalPlayer() == NULL) {
+		gameLocal.Warning("Cmd_SetPlayerStat_f() - local player is NULL");
+		return;
+	}
 	idPlayer* player;
 	player = gameLocal.GetLocalPlayer();
 
@@ -3065,10 +3109,14 @@ void Cmd_SetPlayerStat_f(const idCmdArgs& args)
 }
 void Cmd_ShowPlayerStats_f(const idCmdArgs& args)
 {
+	if (gameLocal.GetLocalPlayer() == NULL) {
+		gameLocal.Warning("Cmd_ShowPlayerStats_f() - local player is NULL");
+		return;
+	}
 	idPlayer* player;
 	player = gameLocal.GetLocalPlayer();
 	
-		int s = player->inventory.GetStat("str");
+	int s = player->inventory.GetStat("str");
 	int d = player->inventory.GetStat("dex");
 	int c = player->inventory.GetStat("con");
 	int i = player->inventory.GetStat("int");
@@ -3094,16 +3142,24 @@ void Cmd_ShowPlayerStats_f(const idCmdArgs& args)
 
 void Cmd_ShowPlayerClass_f(const idCmdArgs& args)
 {
+	if (gameLocal.GetLocalPlayer() == NULL) {
+		gameLocal.Warning("Cmd_ShowPlayerClass_f() - local player is NULL");
+		return;
+	}
 	idPlayer* player;
 	player = gameLocal.GetLocalPlayer();
 	//might break
-	idStr pclass = player->inventory.CurrentClass();
+	int pclass = player->inventory.playerClass;
 
-	gameLocal.Printf("The Player's Class is: %s \n", pclass.c_str());
+	gameLocal.Printf("The Player's Class is: %i \n",pclass);
 }
 
 void Cmd_ShowPlayerLevel_f(const idCmdArgs& args)
 {
+	if (gameLocal.GetLocalPlayer() == NULL) {
+		gameLocal.Warning("Cmd_ShowPlayerLevel_f() - local player is NULL");
+		return;
+	}
 	idPlayer* player;
 	player = gameLocal.GetLocalPlayer();
 	int lvl = player->inventory.GetLevel();
@@ -3321,6 +3377,8 @@ void idGameLocal::InitConsoleCommands( void ) {
 // RITUAL END
 	cmdSystem->AddCommand("setClass",				Cmd_SetPlayerClass_f,		CMD_FL_GAME|CMD_FL_CHEAT,	"Changes the Players class.Can only be done at level 1 & Should only be used in a new game");
 	cmdSystem->AddCommand("setStat",				Cmd_SetPlayerStat_f,		CMD_FL_GAME | CMD_FL_CHEAT, "Changes the Players stats.");
+	cmdSystem->AddCommand("queueClass", Cmd_QueuePlayerClass_f, CMD_FL_GAME | CMD_FL_CHEAT, "Queues the Players class. for spawn");
+	cmdSystem->AddCommand("queueStat", Cmd_QueuePlayerStat_f, CMD_FL_GAME | CMD_FL_CHEAT, "queues the Players stats up for when they spawn.");
 	//TODO: Should turn these into A gui.
 	cmdSystem->AddCommand("showStats",					Cmd_ShowPlayerStats_f,		CMD_FL_GAME | CMD_FL_CHEAT, "Displays the Players stats.");
 	cmdSystem->AddCommand("showClass",					Cmd_ShowPlayerClass_f,		CMD_FL_GAME | CMD_FL_CHEAT, "Displays the Players class.");

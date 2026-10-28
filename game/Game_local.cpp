@@ -8419,6 +8419,50 @@ bool idGameLocal::IsTeamPowerups( void ) {
 	return ( gameType != GAME_ARENA_CTF );
 }
 
+void idGameLocal::QueuePlayerClass(int num)
+{
+	//should be 1-4
+	qClass = num;
+}
+void idGameLocal::QueuePlayerStat(idStr stat, int num)
+{
+	if (num < 1 || num > 20)
+	{
+		gameLocal.Printf("Invalid Stat Number (1-20 Only)\n");
+		return;
+	}
+
+	if (idStr::Icmp(stat.c_str(), "str") == 0)
+	{
+		qstrStat = num;
+	}
+	else if (idStr::Icmp(stat.c_str(), "dex") == 0)
+	{
+		qdexStat = num;
+	}
+	else if (idStr::Icmp(stat.c_str(), "con") == 0)
+	{
+		qconStat = num;
+	}
+	else if (idStr::Icmp(stat.c_str(), "int") == 0)
+	{
+		qintStat = num;
+	}
+	else if (idStr::Icmp(stat.c_str(), "wis") == 0)
+	{
+		qwisStat = num;
+	}
+	else if (idStr::Icmp(stat.c_str(), "cha") == 0)
+	{
+		qchaStat = num;
+	}
+	else
+	{
+		gameLocal.Printf("Invalid Stat (Must be str, dex, con, int, wis, or cha)\n");
+		return;
+	}
+}
+
 // RAVEN BEGIN
 // mwhitlock: Dynamic memory consolidation
 #if defined(_RV_MEM_SYS_SUPPORT)

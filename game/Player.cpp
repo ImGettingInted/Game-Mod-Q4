@@ -2055,6 +2055,14 @@ void idPlayer::Spawn( void ) {
 //RITUAL END
 
 	itemCosts = static_cast< const idDeclEntityDef * >( declManager->FindType( DECL_ENTITYDEF, "ItemCostConstants", false ) );
+
+	inventory.SetPlayerClass(gameLocal.qClass);
+	inventory.SetPlayerStat("str", gameLocal.qstrStat);
+	inventory.SetPlayerStat("dex", gameLocal.qdexStat);
+	inventory.SetPlayerStat("con", gameLocal.qconStat);
+	inventory.SetPlayerStat("int", gameLocal.qintStat);
+	inventory.SetPlayerStat("wis", gameLocal.qwisStat);
+	inventory.SetPlayerStat("cha", gameLocal.qchaStat);
 }
 
 /*
@@ -14160,7 +14168,6 @@ void idInventory::SetPlayerStat(idStr stat, int num)
 	}
 }
 
-//FIXME: Borken x2
 int idInventory::GetStat(idStr stat)
 {
 	if (idStr::Icmp(stat.c_str(), "str") == 0)

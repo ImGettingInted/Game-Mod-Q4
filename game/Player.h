@@ -199,14 +199,15 @@ public:
 	int						weapons;
 
 	// 1 = fighter, 2 = bard, 3 = ranger, 4 = wizard
-	int						playerClass = 1;
+	
+	int						playerClass;
 
-	int						strStat = 16;
-	int						dexStat = 12;
-	int						conStat = 16;
-	int						intStat = 9;
-	int						wisStat = 12;
-	int						chaStat = 8;
+	int						strStat = 1;
+	int						dexStat = 1;
+	int						conStat = 1;
+	int						intStat = 1;
+	int						wisStat = 1;
+	int						chaStat = 1;
 
 	int						level = 1;
 	void                    SetPlayerClass(int n);

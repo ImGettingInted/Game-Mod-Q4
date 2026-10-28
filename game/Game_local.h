@@ -339,6 +339,13 @@ public:
 	bool					sortPushers;			// true if active lists needs to be reordered to place pushers at the front
 	bool					sortTeamMasters;		// true if active lists needs to be reordered to place physics team masters before their slaves
 	idDict					persistentLevelInfo;	// contains args that are kept around between levels
+	int						qClass = 1;				// default to fighter
+	int						qstrStat = 16;
+	int						qdexStat = 12;
+	int						qconStat = 16;
+	int						qintStat = 9;
+	int						qwisStat = 12;
+	int						qchaStat = 8;
 
 // RAVEN BEGIN
 // bdube: client entities
@@ -890,6 +897,8 @@ public:
 	idUserInterface			*GetDemoHud( void );
 	idUserInterface			*GetDemoMphud( void );
 	idUserInterface			*GetDemoCursor( void );
+	void					QueuePlayerClass(int n);
+	void					QueuePlayerStat(idStr stat, int n);
 
 	/*
 	do not synchronize implicit decls over the network
