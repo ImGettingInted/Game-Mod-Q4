@@ -2390,12 +2390,27 @@ void idActor::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &dir
 	if ( !attacker ) {
 		attacker = gameLocal.world;
 	}
+	// OF COURSE THEY OVERRODE THE DAMAGE FUNCTION. WHY WOULDNT THEY.
+	// copy of code from Entity.cpp
+	//TODO: Make character stats affect attack rolls. AC IS HARD CODED TO 10 FOR NOW.
+	int rollToHit = gameLocal.random.RandomInt(20) + 1;
+	gameLocal.Printf("Attack Roll was %i \n", rollToHit);
+	gameLocal.Printf("Armor Class: %i \n", armorClass);
+	if (rollToHit < armorClass)
+	{
+		gameLocal.Printf("Attack did not hit. AC was %i Roll was %i \n", armorClass, rollToHit);
+		return;
+	}
+
+	gameLocal.Printf("Attack hit! AC was %i Roll was %i \n", armorClass, rollToHit);
 
 	const idDict *damageDef = gameLocal.FindEntityDefDict( damageDefName, false );
 	if ( !damageDef ) {
 		gameLocal.Error( "Unknown damageDef '%s'", damageDefName );
 	}
 
+// TODO: change damage to a string and make rolling dice damage work that way? Careful of other places it asks for an integer.
+// Could also add a new variable (smth like "diceDamage") to get around it.
 	int	damage = damageDef->GetInt( "damage" ) * damageScale;
 	damage = GetDamageForLocation( damage, location );
 

@@ -1977,7 +1977,7 @@ void idPlayer::Spawn( void ) {
 		}
 // RAVEN BEGIN
 // mekberg: set to blaster now and disable the weapon.
-		idealWeapon = SlotForWeapon ( "weapon_gauntlet" ); 
+		idealWeapon = SlotForWeapon ( "weapon_blaster" ); 
 		Event_DisableWeapon( );
 // RAVEN END
 	} else {
@@ -14078,3 +14078,28 @@ int idPlayer::CanSelectWeapon(const char* weaponName)
 }
 
 // RITUAL END
+
+void idInventory::SetPlayerClass(characterClass pclass)
+{
+	playerClass = pclass;
+}
+
+int idInventory::CalculateAC()
+{
+	// Fighter (Medium Armor)
+	if (playerClass == 0)
+	{
+		return 14 + ((dexStat - 10) / 2);
+	}
+	// Bard and Ranger (Light Armor)
+	else if (playerClass == 1 || playerClass == 2)
+	{
+		return 11 + ((dexStat - 10) / 2);
+	}
+	// Wizard (No Armor)
+	else
+	{
+		return 10 + ((dexStat - 10)/2);
+	}
+}
+

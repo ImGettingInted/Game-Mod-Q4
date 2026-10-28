@@ -214,6 +214,9 @@ public:
 	int						wisStat;
 	int						chaStat;
 
+	void                    SetPlayerClass(characterClass pclass);
+	int                     CalculateAC();
+
 // RITUAL BEGIN
 // squirrel: Mode-agnostic buymenus
 	int						carryOverWeapons;

@@ -3648,11 +3648,23 @@ void idEntity::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 		attacker = gameLocal.world;
 	}
 
+	//TODO: Make character stats affect attack rolls
+	int rollToHit = gameLocal.random.RandomInt(20) + 1;
+	gameLocal.Printf("Attack Roll was %i \n", rollToHit);
+	gameLocal.Printf("Armor Class: %i \n",armorClass);
+	if (rollToHit < armorClass)
+	{
+		gameLocal.Printf("Attack did not hit. AC was %i Roll was %i \n", armorClass, rollToHit);
+		return;
+	}
+
+	gameLocal.Printf("Attack hit! AC was %i Roll was %i \n", armorClass, rollToHit);
 	const idDict *damageDef = gameLocal.FindEntityDefDict( damageDefName, false );
 	if ( !damageDef ) {
 		gameLocal.Error( "Unknown damageDef '%s'\n", damageDefName );
 	}
-
+	// TODO: change damage to a string and make rolling dice damage work that way? Careful of other places it asks for an integer.
+	// Could also add a new variable (smth like "diceDamage") to get around it.
 	int	damage = damageDef->GetInt( "damage" );
 
 	// inform the attacker that they hit someone

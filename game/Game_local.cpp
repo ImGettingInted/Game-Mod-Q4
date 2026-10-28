@@ -7746,7 +7746,7 @@ idEntity* idGameLocal::HitScan(
 								damage = hitscanDict.GetString( va("def_damage_%s", tr.c.materialType->GetName()) );
 							}
 							if ( !damage || !*damage ) {
-								damage = hitscanDict.GetString ( "def_damage" );
+									damage = hitscanDict.GetString("def_damage");
 							}
 							if ( damage && damage[0] ) {
 								actualHitEnt->Damage( owner, owner, dir, damage, damageScale, CLIPMODEL_ID_TO_JOINT_HANDLE( tr.c.id ) );

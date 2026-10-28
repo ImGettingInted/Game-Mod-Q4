@@ -3,24 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|C:\\USERS\\RGROC\\GIT\\GAME-MOD-Q4\\RENDERER\\RENDERWORLD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|solutionrelative:RENDERER\\RENDERWORLD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Actor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Actor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\Class.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|solutionrelative:mpgame\\gamesys\\Class.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Actor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Actor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\SaveGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|solutionrelative:mpgame\\gamesys\\SaveGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\SysCmds.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F2EF9123-B7C3-4F2F-A351-747B595BB534}|mpgame.vcxproj|solutionrelative:mpgame\\gamesys\\SysCmds.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Game_local.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Game_local.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Weapon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\weapon\\WeaponBlaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\ai\\Monster_Berserker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\ai\\Monster_Berserker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Projectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Projectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|solutionrelative:game\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49BEC5C6-B964-417A-851E-808886B57430}|game.vcxproj|C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -34,69 +58,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RenderWorld.h",
-              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\renderer\\RenderWorld.h",
-              "RelativeDocumentMoniker": "renderer\\RenderWorld.h",
-              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\renderer\\RenderWorld.h",
-              "RelativeToolTip": "renderer\\RenderWorld.h",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAawGUAAAApAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Entity.h",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Entity.h",
+              "RelativeDocumentMoniker": "game\\Entity.h",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Entity.h",
+              "RelativeToolTip": "game\\Entity.h",
+              "ViewState": "AgIAAHAAAAAAAAAAAAApwIgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-10-26T20:40:49.695Z",
+              "WhenOpened": "2026-10-28T06:23:24.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SysCmds.cpp",
-              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\SysCmds.cpp",
-              "RelativeDocumentMoniker": "mpgame\\gamesys\\SysCmds.cpp",
-              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\SysCmds.cpp*",
-              "RelativeToolTip": "mpgame\\gamesys\\SysCmds.cpp*",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAawLAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Monster_Berserker.cpp",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\ai\\Monster_Berserker.cpp",
+              "RelativeDocumentMoniker": "game\\ai\\Monster_Berserker.cpp",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\ai\\Monster_Berserker.cpp",
+              "RelativeToolTip": "game\\ai\\Monster_Berserker.cpp",
+              "ViewState": "AgIAAMEAAAAAAAAAAAApwCsBAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-26T20:40:31.295Z",
+              "WhenOpened": "2026-10-28T07:18:53.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WeaponBlaster.cpp",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp",
+              "RelativeDocumentMoniker": "game\\weapon\\WeaponBlaster.cpp",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\weapon\\WeaponBlaster.cpp",
+              "RelativeToolTip": "game\\weapon\\WeaponBlaster.cpp",
+              "ViewState": "AgIAAIkBAAAAAAAAAAAAALEBAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-28T07:16:21.645Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SaveGame.cpp",
-              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\SaveGame.cpp",
-              "RelativeDocumentMoniker": "mpgame\\gamesys\\SaveGame.cpp",
-              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\SaveGame.cpp*",
-              "RelativeToolTip": "mpgame\\gamesys\\SaveGame.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Entity.cpp",
+              "RelativeDocumentMoniker": "game\\Entity.cpp",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Entity.cpp",
+              "RelativeToolTip": "game\\Entity.cpp",
+              "ViewState": "AgIAADsOAAAAAAAAAAApwFEOAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-26T20:40:27.888Z",
+              "WhenOpened": "2026-10-28T06:20:52.597Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Class.cpp",
-              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\Class.cpp",
-              "RelativeDocumentMoniker": "mpgame\\gamesys\\Class.cpp",
-              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\mpgame\\gamesys\\Class.cpp*",
-              "RelativeToolTip": "mpgame\\gamesys\\Class.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-26T20:39:00.551Z",
+              "DocumentIndex": 11,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.h",
+              "RelativeDocumentMoniker": "game\\Player.h",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.h",
+              "RelativeToolTip": "game\\Player.h",
+              "ViewState": "AgIAAL0AAAAAAAAAAIAwwNYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-26T20:28:08.724Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
+              "Title": "Weapon.h",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Weapon.h",
+              "RelativeDocumentMoniker": "game\\Weapon.h",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Weapon.h",
+              "RelativeToolTip": "game\\Weapon.h",
+              "ViewState": "AgIAALAAAAAAAAAAAAApwMcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-28T06:53:58.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.cpp",
               "RelativeDocumentMoniker": "game\\Player.cpp",
               "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.cpp",
               "RelativeToolTip": "game\\Player.cpp",
-              "ViewState": "AgIAAKwHAAAAAAAAAAAuwMQHAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAOw2AAAAAAAAAAApwP82AAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-10-26T20:31:44.093Z",
               "EditorCaption": ""
@@ -104,14 +154,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.h",
-              "RelativeDocumentMoniker": "game\\Player.h",
-              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Player.h",
-              "RelativeToolTip": "game\\Player.h",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAuwAEBAAA8AAAAAAAAAA==",
+              "Title": "Weapon.cpp",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Weapon.cpp",
+              "RelativeDocumentMoniker": "game\\Weapon.cpp",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Weapon.cpp",
+              "RelativeToolTip": "game\\Weapon.cpp",
+              "ViewState": "AgIAAOMKAAAAAAAAAAApwAYLAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-27T19:46:25.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Projectile.h",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Projectile.h",
+              "RelativeDocumentMoniker": "game\\Projectile.h",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Projectile.h",
+              "RelativeToolTip": "game\\Projectile.h",
+              "ViewState": "AgIAAJcAAAAAAAAAAAApwKsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-10-26T20:28:08.724Z",
+              "WhenOpened": "2026-10-27T19:25:52.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Actor.h",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Actor.h",
+              "RelativeDocumentMoniker": "game\\Actor.h",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Actor.h",
+              "RelativeToolTip": "game\\Actor.h",
+              "ViewState": "AgIAALcAAAAAAAAAAAApwNAAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-27T18:16:06.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Actor.cpp",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Actor.cpp",
+              "RelativeDocumentMoniker": "game\\Actor.cpp",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Actor.cpp",
+              "RelativeToolTip": "game\\Actor.cpp",
+              "ViewState": "AgIAAGoJAAAAAAAAAAApwH4JAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-27T18:16:59.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Game_local.cpp",
+              "DocumentMoniker": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Game_local.cpp",
+              "RelativeDocumentMoniker": "game\\Game_local.cpp",
+              "ToolTip": "C:\\Users\\rgroc\\git\\Game-Mod-Q4\\game\\Game_local.cpp",
+              "RelativeToolTip": "game\\Game_local.cpp",
+              "ViewState": "AgIAAJAWAAAAAAAAAAApwKUWAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-28T07:34:04.135Z",
               "EditorCaption": ""
             }
           ]
