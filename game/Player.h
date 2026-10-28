@@ -192,30 +192,31 @@ typedef enum {
 
 const int	ASYNC_PLAYER_TOURNEY_STATUS_BITS = idMath::BitsForInteger( PTS_NUM_STATES );
 
-enum characterClass {
-	Fighter,
-	Bard,
-	Ranger,
-	Wizard,
-};
 
 class idInventory {
 public:
 	int						maxHealth;
 	int						weapons;
 
+	// 1 = fighter, 2 = bard, 3 = ranger, 4 = wizard
+	int						playerClass = 1;
 
-	enum characterClass playerClass;
+	int						strStat = 16;
+	int						dexStat = 12;
+	int						conStat = 16;
+	int						intStat = 9;
+	int						wisStat = 12;
+	int						chaStat = 8;
 
-	int						strStat;
-	int						dexStat;
-	int						conStat;
-	int						intStat;
-	int						wisStat;
-	int						chaStat;
-
-	void                    SetPlayerClass(characterClass pclass);
+	int						level = 1;
+	void                    SetPlayerClass(int n);
+	void					SetPlayerStat(idStr str, int num);
 	int                     CalculateAC();
+	idStr					ClassToString(int i);
+	idStr					CurrentClass();
+	int						GetStat(idStr stat);
+	int						GetLevel();
+	//void					LevelUp();
 
 // RITUAL BEGIN
 // squirrel: Mode-agnostic buymenus

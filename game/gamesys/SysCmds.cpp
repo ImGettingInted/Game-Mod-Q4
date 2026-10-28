@@ -3021,7 +3021,94 @@ void Cmd_CheckSave_f( const idCmdArgs &args );
 void Cmd_ShuffleTeams_f( const idCmdArgs& args ) {
 	gameLocal.mpGame.ShuffleTeams();
 }
+void Cmd_SetPlayerClass_f(const idCmdArgs& args)
+{
+	idPlayer* player;
+	player = gameLocal.GetLocalPlayer();
 
+	idStr str = args.Argv(1);
+	
+	if (idStr::Icmp(str, "fighter") == 0)
+	{
+		player->inventory.SetPlayerClass(1);
+	}
+	else if (idStr::Icmp(str, "bard") == 0)
+	{
+		player->inventory.SetPlayerClass(2);
+	}
+	else if (idStr::Icmp(str, "ranger") == 0)
+	{
+		player->inventory.SetPlayerClass(3);
+	}
+	else if (idStr::Icmp(str, "wizard") == 0)
+	{
+		player->inventory.SetPlayerClass(4);
+		
+	}
+	else
+	{
+		gameLocal.Printf("Invalid Command Structure");
+		return;
+	}
+}
+
+void Cmd_SetPlayerStat_f(const idCmdArgs& args)
+{
+	idPlayer* player;
+	player = gameLocal.GetLocalPlayer();
+
+	//Stat to change
+	idStr stat = args.Argv(1);
+	//Number that the Stat will become
+	int num = atoi(args.Argv(2));
+	player->inventory.SetPlayerStat(stat,num);
+}
+void Cmd_ShowPlayerStats_f(const idCmdArgs& args)
+{
+	idPlayer* player;
+	player = gameLocal.GetLocalPlayer();
+	
+		int s = player->inventory.GetStat("str");
+	int d = player->inventory.GetStat("dex");
+	int c = player->inventory.GetStat("con");
+	int i = player->inventory.GetStat("int");
+	int w = player->inventory.GetStat("wis");
+	int ch = player->inventory.GetStat("cha");
+	
+/*
+	int s = player->inventory.strStat;
+	int d = player->inventory.dexStat;
+	int c = player->inventory.conStat;
+	int i = player->inventory.intStat;
+	int w = player->inventory.wisStat;
+	int ch = player->inventory.chaStat;
+*/
+
+	gameLocal.Printf("Strength: %i \n",s);
+	gameLocal.Printf("Dexterity: %i \n", d);
+	gameLocal.Printf("Constitution: %i \n", c);
+	gameLocal.Printf("Intelligence: %i \n", i);
+	gameLocal.Printf("Wisdom: %i \n", w);
+	gameLocal.Printf("Charisma: %i \n", ch);
+}
+
+void Cmd_ShowPlayerClass_f(const idCmdArgs& args)
+{
+	idPlayer* player;
+	player = gameLocal.GetLocalPlayer();
+	//might break
+	idStr pclass = player->inventory.CurrentClass();
+
+	gameLocal.Printf("The Player's Class is: %s \n", pclass.c_str());
+}
+
+void Cmd_ShowPlayerLevel_f(const idCmdArgs& args)
+{
+	idPlayer* player;
+	player = gameLocal.GetLocalPlayer();
+	int lvl = player->inventory.GetLevel();
+	gameLocal.Printf("The Player's Current Level is: %i \n", lvl);
+}
 #ifndef _FINAL
 void Cmd_ClientOverflowReliable_f( const idCmdArgs& args ) {
 	idBitMsg	outMsg;
@@ -3232,7 +3319,13 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand( "buyMenu",				Cmd_ToggleBuyMenu_f,		CMD_FL_GAME,				"Toggle buy menu (if in a buy zone and the game type supports it)" );
 	cmdSystem->AddCommand( "buy",					Cmd_BuyItem_f,				CMD_FL_GAME,				"Buy an item (if in a buy zone and the game type supports it)" );
 // RITUAL END
-
+	cmdSystem->AddCommand("setClass",				Cmd_SetPlayerClass_f,		CMD_FL_GAME|CMD_FL_CHEAT,	"Changes the Players class.Can only be done at level 1 & Should only be used in a new game");
+	cmdSystem->AddCommand("setStat",				Cmd_SetPlayerStat_f,		CMD_FL_GAME | CMD_FL_CHEAT, "Changes the Players stats.");
+	//TODO: Should turn these into A gui.
+	cmdSystem->AddCommand("showStats",					Cmd_ShowPlayerStats_f,		CMD_FL_GAME | CMD_FL_CHEAT, "Displays the Players stats.");
+	cmdSystem->AddCommand("showClass",					Cmd_ShowPlayerClass_f,		CMD_FL_GAME | CMD_FL_CHEAT, "Displays the Players class.");
+	cmdSystem->AddCommand("showLevel", Cmd_ShowPlayerLevel_f, CMD_FL_GAME | CMD_FL_CHEAT, "Displays the Players level.");
+	//Add one for leveling up?
 }
 
 /*

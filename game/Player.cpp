@@ -14079,11 +14079,130 @@ int idPlayer::CanSelectWeapon(const char* weaponName)
 
 // RITUAL END
 
-void idInventory::SetPlayerClass(characterClass pclass)
+idStr idInventory::ClassToString(int i)
 {
-	playerClass = pclass;
+	switch (i)
+	{
+	case 1:
+		return "fighter";
+		break;
+	case 2:
+		return "bard";
+		break;
+	case 3:
+		return "ranger";
+		break;
+	case 4:
+		return "wizard";
+		break;
+	default:
+		return "";
+	}
+}
+idStr idInventory::CurrentClass()
+{
+	return ClassToString(playerClass);
+}
+void idInventory::SetPlayerClass(int n)
+{
+	if (level != 1)
+	{
+		return;
+	}
+
+	//should be 1-4
+	playerClass = n;
+	gameLocal.Printf("Set Player's Class to %i \n", n);
 }
 
+void idInventory::SetPlayerStat(idStr stat, int num)
+{
+	if (num < 1 || num > 20)
+	{
+		gameLocal.Printf("Invalid Stat Number (1-20 Only)\n");
+		return;
+	}
+
+	if (idStr::Icmp(stat.c_str(), "str") == 0)
+	{
+		strStat = num;
+		gameLocal.Printf("Set Player's Strength to %i\n", num);
+	}
+	else if (idStr::Icmp(stat.c_str(), "dex") == 0)
+	{
+		dexStat = num;
+		gameLocal.Printf("Set Player's Dexterity to %i\n", num);
+	}
+	else if (idStr::Icmp(stat.c_str(), "con") == 0)
+	{
+		conStat = num;
+		gameLocal.Printf("Set Player's Constitution to %i\n", num);
+	}
+	else if (idStr::Icmp(stat.c_str(), "int") == 0)
+	{
+		intStat = num;
+		gameLocal.Printf("Set Player's Intelligence to %i\n", num);
+	}
+	else if (idStr::Icmp(stat.c_str(), "wis") == 0)
+	{
+		wisStat = num;
+		gameLocal.Printf("Set Player's Wisdom to %i\n", num);
+	}
+	else if (idStr::Icmp(stat.c_str(), "cha") == 0)
+	{
+		chaStat = num;
+		gameLocal.Printf("Set Player's Charisma to %i \n", num);
+	}
+	else
+	{
+		gameLocal.Printf("Invalid Stat (Must be str, dex, con, int, wis, or cha)\n");
+		return;
+	}
+}
+
+//FIXME: Borken x2
+int idInventory::GetStat(idStr stat)
+{
+	if (idStr::Icmp(stat.c_str(), "str") == 0)
+	{
+		gameLocal.Printf("reading strength\n");
+		return strStat;
+	}
+	else if (idStr::Icmp(stat.c_str(), "dex") == 0)
+	{
+		gameLocal.Printf("reading dex\n");
+		return dexStat;
+	}
+	else if (idStr::Icmp(stat.c_str(), "con") == 0)
+	{
+		gameLocal.Printf("reading con\n");
+		return conStat;
+	}
+	else if (idStr::Icmp(stat.c_str(), "int") == 0)
+	{
+		gameLocal.Printf("reading intelligence\n");
+		return intStat;
+	}
+	else if (idStr::Icmp(stat.c_str(), "wis") == 0)
+	{
+		gameLocal.Printf("reading wisdom\n");
+		return wisStat;
+	}
+	else if (idStr::Icmp(stat.c_str(), "cha") == 0)
+	{
+		gameLocal.Printf("reading charisma\n");
+		return chaStat;
+	}
+	else
+	{
+		gameLocal.Printf("Invalid Stat (Must be str, dex, con, int, wis, or cha)\n");
+		return 0;
+	}
+}
+int idInventory::GetLevel()
+{
+	return level;
+}
 int idInventory::CalculateAC()
 {
 	// Fighter (Medium Armor)
@@ -14102,4 +14221,5 @@ int idInventory::CalculateAC()
 		return 10 + ((dexStat - 10)/2);
 	}
 }
+
 
