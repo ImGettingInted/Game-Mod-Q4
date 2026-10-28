@@ -25539,13 +25539,13 @@ windowDef Desktop
 				set "pop_cc_wis::text" "Wisdom: 12" ;
 				set "pop_cc_cha::text" "Charisma: 8" ;
 				
-				consoleCMD "setClass fighter" ;
-				consoleCMD "setStat str 16" ;
-				consoleCMD "setStat dex 12" ;
-				consoleCMD "setStat con 16" ;
-				consoleCMD "setStat int 9" ;
-				consoleCMD "setStat wis 12" ;
-				consoleCMD "setStat cha 8" ;
+				consoleCMD "queueClass fighter" ;
+				consoleCMD "queueStat str 16" ;
+				consoleCMD "queueStat dex 12" ;
+				consoleCMD "queueStat con 16" ;
+				consoleCMD "queueStat int 9" ;
+				consoleCMD "queueStat wis 12" ;
+				consoleCMD "queueStat cha 8" ;
 				
 				set "cmd" "play main_menu_selection" ;
 			}
@@ -25590,13 +25590,13 @@ windowDef Desktop
 				set "pop_cc_wis::text" "Wisdom: 10" ;
 				set "pop_cc_cha::text" "Charisma: 16" ;
 				
-				consoleCMD "setClass bard" ;
-				consoleCMD "setStat str 8" ;
-				consoleCMD "setStat dex 14" ;
-				consoleCMD "setStat con 15" ;
-				consoleCMD "setStat int 10" ;
-				consoleCMD "setStat wis 10" ;
-				consoleCMD "setStat cha 16" ;
+				consoleCMD "queueClass bard" ;
+				consoleCMD "queueStat str 8" ;
+				consoleCMD "queueStat dex 14" ;
+				consoleCMD "queueStat con 15" ;
+				consoleCMD "queueStat int 10" ;
+				consoleCMD "queueStat wis 10" ;
+				consoleCMD "queueStat cha 16" ;
 				
 				set "cmd" "play main_menu_selection" ;
 			}
@@ -25641,13 +25641,13 @@ windowDef Desktop
 				set "pop_cc_wis::text" "Wisdom: 16" ;
 				set "pop_cc_cha::text" "Charisma: 10" ;
 				
-				consoleCMD "setClass ranger" ;
-				consoleCMD "setStat str 8" ;
-				consoleCMD "setStat dex 16" ;
-				consoleCMD "setStat con 13" ;
-				consoleCMD "setStat int 10" ;
-				consoleCMD "setStat wis 16" ;
-				consoleCMD "setStat cha 10" ;
+				consoleCMD "queueClass ranger" ;
+				consoleCMD "queueStat str 8" ;
+				consoleCMD "queueStat dex 16" ;
+				consoleCMD "queueStat con 13" ;
+				consoleCMD "queueStat int 10" ;
+				consoleCMD "queueStat wis 16" ;
+				consoleCMD "queueStat cha 10" ;
 				
 				set "cmd" "play main_menu_selection" ;
 			}
@@ -25692,13 +25692,13 @@ windowDef Desktop
 				set "pop_cc_wis::text" "Wisdom: 10" ;
 				set "pop_cc_cha::text" "Charisma: 10" ;
 				
-				consoleCMD "setClass wizard" ;
-				consoleCMD "setStat str 8" ;
-				consoleCMD "setStat dex 13" ;
-				consoleCMD "setStat con 16" ;
-				consoleCMD "setStat int 16" ;
-				consoleCMD "setStat wis 10" ;
-				consoleCMD "setStat cha 10" ;
+				consoleCMD "queueClass wizard" ;
+				consoleCMD "queueStat str 8" ;
+				consoleCMD "queueStat dex 13" ;
+				consoleCMD "queueStat con 16" ;
+				consoleCMD "queueStat int 16" ;
+				consoleCMD "queueStat wis 10" ;
+				consoleCMD "queueStat cha 10" ;
 				
 				set "cmd" "play main_menu_selection" ;
 			}
