@@ -3415,7 +3415,15 @@ void idPlayer::UpdateHudStats( idUserInterface *_hud ) {
 		_hud->SetStateFloat	( "player_armorpct", idMath::ClampFloat ( 0.0f, 1.0f, (float)inventory.armor / (float)inventory.maxarmor ) );
 		_hud->HandleNamedEvent ( "updateArmor" );
 	}
-	
+	// Character Stats ( all stats + Level)
+	_hud->SetStateInt("info_level_n", inventory.level);
+	_hud->SetStateInt("info_strength_n", inventory.strStat);
+	_hud->SetStateInt("info_dexterity_n", inventory.dexStat);
+	_hud->SetStateInt("info_constitution_n", inventory.conStat);
+	_hud->SetStateInt("info_intelligence_n", inventory.intStat);
+	_hud->SetStateInt("info_wisdom_n", inventory.wisStat);
+	_hud->SetStateInt("info_charisma_n", inventory.chaStat);
+
 	// Boss bar
 	if ( _hud->State().GetInt ( "boss_health", "-1" ) != (bossEnemy ? bossEnemy->health : -1) ) {
 		if ( !bossEnemy || bossEnemy->health <= 0 ) {
