@@ -15168,11 +15168,11 @@ windowDef Desktop
 				}
 				windowDef pop_help_text
 				{
-					rect	182,124,267,121
+					rect	182,124,267,169
 					visible	1
 					forecolor	1,1,1,0.8
-					text	"D&D in Quake 4 Mod by Ruben Gonzalez."
-					textscale	0.1
+					text	"D&D in Quake 4 Mod by Ruben Gonzalez. This game is to be played similarly to the original quake game, however there are some alterations. \n First offf the player must choose their class upon beginning a new game.  \n The 4 classes available to choose from are the Fighter, the Bard, the ranger, and the wizard. \n These classes each have different starting statistics, whihc will grow upon killing enemies and gathering xp."
+					textscale	0.2
 					font	"fonts/lowpixel"
 				}
 				windowDef pop_help_title

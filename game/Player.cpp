@@ -3423,7 +3423,7 @@ void idPlayer::UpdateHudStats( idUserInterface *_hud ) {
 	_hud->SetStateInt("info_intelligence_n", inventory.intStat);
 	_hud->SetStateInt("info_wisdom_n", inventory.wisStat);
 	_hud->SetStateInt("info_charisma_n", inventory.chaStat);
-
+	
 	// Boss bar
 	if ( _hud->State().GetInt ( "boss_health", "-1" ) != (bossEnemy ? bossEnemy->health : -1) ) {
 		if ( !bossEnemy || bossEnemy->health <= 0 ) {
@@ -10103,7 +10103,21 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 	if ( gameLocal.isClient ) {
 		return;
 	}
+
+	int rollToHit = gameLocal.random.RandomInt(20) + 1;
+	int playerAC = inventory.CalculateAC();
+	gameLocal.Printf("Attack Roll on Player was %i \n", rollToHit);
+	gameLocal.Printf("Player Armor Class: %i \n", playerAC);
+	if (rollToHit < playerAC)
+	{
+		gameLocal.Printf("Attack on Player did not hit. AC was %i Roll was %i \n", playerAC, rollToHit);
+		gameLocal.UpdateRolledDice(rollToHit, false, 0);
+		return;
+	}
+
+	gameLocal.Printf("Attack on player hit! AC was %i Roll was %i \n", playerAC, rollToHit);
 	
+
  	if ( !fl.takedamage || noclip || spectating || gameLocal.inCinematic ) {
 		// If in vehicle let it know that something is trying to hurt the invisible player
 		if ( IsInVehicle ( ) ) {
@@ -10151,6 +10165,14 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 		lightningNextTime = gameLocal.GetTime();
 	}
 
+	damage = 0;
+	int diceNum = damageDef->dict.GetInt("damage_dice_count");
+	int diceSize = damageDef->dict.GetInt("damage_dice_size");
+	for (int i = 1; i <= diceNum;i++)
+	{
+		int rolled = gameLocal.random.RandomInt(diceSize) + 1;
+		damage += rolled;
+	}
 	// We pass in damageScale, because this function calculates a modified damageScale 
 	// based on g_skill, and we don't want to compensate for skill level twice.
 	CalcDamagePoints( inflictor, attacker, &damageDef->dict, damageScale, location, &damage, &armorSave );
@@ -14234,6 +14256,119 @@ int idInventory::CalculateAC()
 	else
 	{
 		return 10 + ((dexStat - 10)/2);
+	}
+}
+void idInventory::GainXP(int amount)
+{
+	playerXP += amount;
+	if (playerXP >= 15)
+	{
+		LevelUp();
+		playerXP = 0;
+	}
+}
+// more maxhp and stats up
+void idInventory::LevelUp()
+{
+	if (level >= 20)
+	{
+		return;
+	}
+	level++;
+	switch (playerClass)
+	{
+	case 1: //fighter 6 + con mod health up
+		maxHealth += (6 + conStat);
+		if (level % 4 == 0)
+		{
+			profBonus++;
+			if (strStat < 20)
+			{
+				strStat++;
+			}
+			else
+			{
+				wisStat++;
+			}
+			if (conStat < 20)
+			{
+				conStat++;
+			}
+			else
+			{
+				dexStat++;
+			}
+		}
+		break;
+	case 2: // bard 5 + con mod health up
+		maxHealth += (5 + conStat);
+		if (level % 4 == 0)
+		{
+			profBonus++;
+			if (chaStat < 20)
+			{
+				chaStat++;
+			}
+			else
+			{
+				conStat++;
+			}
+			if (dexStat < 20)
+			{
+				dexStat++;
+			}
+			else
+			{
+				wisStat++;
+			}
+		}
+		break;
+	case 3: // ranger 6 + con mod health up
+		maxHealth += (6 + conStat);
+		if (level % 4 == 0)
+		{
+			profBonus++;
+			if (dexStat < 20)
+			{
+				dexStat++;
+			}
+			else
+			{
+				conStat++;
+			}
+			if (wisStat < 20)
+			{
+				wisStat++;
+			}
+			else
+			{
+				chaStat++;
+			}
+		}
+		break;
+	case 4: // wizard 4 + con mod health up
+		maxHealth += (4 + conStat);
+		if (level % 4 == 0)
+		{
+			profBonus++;
+			if (intStat < 20)
+			{
+				intStat++;
+			}
+			else
+			{
+				conStat++;
+			}
+			if (dexStat < 20)
+			{
+				dexStat++;
+			}
+			else
+			{
+				wisStat++;
+			}
+		}
+		break;
 	}
 }
 

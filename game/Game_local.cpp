@@ -7305,7 +7305,22 @@ void idGameLocal::UpdateEndLevel()	{
 	}
 }
 
-
+void idGameLocal::UpdateRolledDice(int rolled, bool brokeAC, int damage) {
+	idPlayer* player = GetLocalPlayer();
+	if (player && player->GetHud()) {
+		player->GetHud()->SetStateInt("dice_to_hit_n", rolled);
+		if (!brokeAC)
+		{
+			player->GetHud()->SetStateString("dice_hit_yn", "no");
+			player->GetHud()->SetStateInt("dice_damage_n", 0);
+		}
+		else
+		{
+			player->GetHud()->SetStateString("dice_hit_yn", "yes");
+			player->GetHud()->SetStateInt("dice_damage_n", damage);
+		}
+	}
+}
 // bdube: added
 /*
 ================

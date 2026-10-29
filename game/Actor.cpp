@@ -2390,28 +2390,66 @@ void idActor::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &dir
 	if ( !attacker ) {
 		attacker = gameLocal.world;
 	}
-	// OF COURSE THEY OVERRODE THE DAMAGE FUNCTION. WHY WOULDNT THEY.
-	// copy of code from Entity.cpp
-	//TODO: Make character stats affect attack rolls. AC IS HARD CODED TO 10 FOR NOW.
-	int rollToHit = gameLocal.random.RandomInt(20) + 1;
-	gameLocal.Printf("Attack Roll was %i \n", rollToHit);
-	gameLocal.Printf("Armor Class: %i \n", armorClass);
-	if (rollToHit < armorClass)
-	{
-		gameLocal.Printf("Attack did not hit. AC was %i Roll was %i \n", armorClass, rollToHit);
-		return;
-	}
-
-	gameLocal.Printf("Attack hit! AC was %i Roll was %i \n", armorClass, rollToHit);
 
 	const idDict *damageDef = gameLocal.FindEntityDefDict( damageDefName, false );
+
 	if ( !damageDef ) {
 		gameLocal.Error( "Unknown damageDef '%s'", damageDefName );
 	}
+	idPlayer* player = gameLocal.GetLocalPlayer();
+		//TODO: Make character stats affect attack rolls. AC IS HARD CODED TO 10 FOR NOW.
+	int rollToHit = gameLocal.random.RandomInt(20) + 1;
+	gameLocal.Printf("Attack Roll was %i \n", rollToHit);
+	gameLocal.Printf("Armor Class: %i \n", armorClass);
+	int profBonus = player->inventory.profBonus;	
+	idStr bestStat = damageDef->GetString("pref_stat");
+	
+	if (idStr::Icmp(bestStat.c_str(), "str") == 0)
+	{
+		profBonus += round(player->inventory.strStat-10)/2;
+	}
+	else if (idStr::Icmp(bestStat.c_str(), "dex") == 0)
+	{
+		profBonus += round(player->inventory.dexStat - 10) / 2;
+	}
+	else if (idStr::Icmp(bestStat.c_str(), "con") == 0)
+	{
+		profBonus += round(player->inventory.conStat - 10) / 2;
+	}
+	else if (idStr::Icmp(bestStat.c_str(), "int") == 0)
+	{
+		profBonus += round(player->inventory.intStat - 10) / 2;
+	}
+	else if (idStr::Icmp(bestStat.c_str(), "wis") == 0)
+	{
+		profBonus += round(player->inventory.wisStat - 10) / 2;
+	}
+	else if (idStr::Icmp(bestStat.c_str(), "cha") == 0)
+	{
+		profBonus += round(player->inventory.chaStat - 10) / 2;
+	}
 
-// TODO: change damage to a string and make rolling dice damage work that way? Careful of other places it asks for an integer.
-// Could also add a new variable (smth like "diceDamage") to get around it.
-	int	damage = damageDef->GetInt( "damage" ) * damageScale;
+	if (rollToHit + profBonus < armorClass)
+	{
+		gameLocal.Printf("Attack did not hit. AC was %i Roll was %i \n", armorClass, rollToHit);
+		gameLocal.UpdateRolledDice(rollToHit+profBonus, false, 0);
+		return;
+	}
+	gameLocal.Printf("Attack hit! AC was %i Roll was %i \n", armorClass, rollToHit+profBonus);
+	
+	//int	damage = damageDef->GetInt( "damage" ) * damageScale;
+
+	int damage = 0;
+	int diceNum = damageDef->GetInt("damage_dice_count");
+	int diceSize = damageDef->GetInt("damage_dice_size");
+	for (int i = 1; i <= diceNum;i++)
+	{
+		int rolled = gameLocal.random.RandomInt(diceSize) + 1;
+		damage += rolled;
+	}
+	damage += profBonus;
+	gameLocal.UpdateRolledDice(rollToHit, true, damage);
+	gameLocal.Printf("Damage Dice (%i d %i) -> %i", diceNum, diceSize, damage);
 	damage = GetDamageForLocation( damage, location );
 
 	// friendly fire damage

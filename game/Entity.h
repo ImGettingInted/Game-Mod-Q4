@@ -136,6 +136,7 @@ public:
 
 	int						health;					// FIXME: do all objects really need health?
 	int						armorClass = 10;				// SINCE ALL ENTITIES NEED HEALTH ALL ENTITIES ARE GONNA HAVE AC >:(
+	int						xpGiven = 5;					// SAME FOR XP >:[
 
 // RAVEN BEGIN
 // ddynerman: optional pre-prediction

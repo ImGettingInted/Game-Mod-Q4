@@ -1613,7 +1613,9 @@ void idAI::Killed( idEntity *inflictor, idEntity *attacker, int damage, const id
 	idAngles			ang;
 	const char*			modelDeath;
 	const idKeyValue*	kv;
-	
+	idPlayer* player = gameLocal.GetLocalPlayer();
+	gameLocal.Printf("Giving player 5 xp");
+	player->inventory.GainXP(5);
 	if ( g_debugDamage.GetBool() ) {
 		gameLocal.Printf( "Damage: joint: '%s', zone '%s'\n", animator.GetJointName( ( jointHandle_t )location ), 
 			GetDamageGroup( location ) );
@@ -1657,9 +1659,13 @@ void idAI::Killed( idEntity *inflictor, idEntity *attacker, int damage, const id
 
 	// end our looping ambient sound
 	StopSound( SND_CHANNEL_AMBIENT, false );
-
+	
 	if ( attacker && attacker->IsType( idActor::GetClassType() ) ) {
 		gameLocal.AlertAI( ( idActor * )attacker );
+		
+
+		if (!attacker || !attacker->IsType(idPlayer::GetClassType())) {
+		}
 
 		aiManager.AnnounceKill ( this, attacker, inflictor );
 		aiManager.AnnounceDeath ( this, attacker );

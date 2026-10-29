@@ -1943,4 +1943,64 @@ windowDef Desktop
 			}
 		}
 	}
+	windowDef info_dice
+	{
+		rect	10,6,494,88
+		visible	1
+		windowDef info_backbar1
+		{
+			rect	-12,0,489,83
+			visible	1
+			background	"gfx/guis/hud/s_bossbar"
+			matcolor	0,0,0,0.5
+			windowDef dice_to_hit_n
+			{
+				rect	83,12,51,48
+				visible	1
+				forecolor	1,1,1,1
+				text	"gui::dice_to_hit_n"
+				textscale	0.4
+			}
+			windowDef dice_to_hit
+			{
+				rect	34,12,51,48
+				visible	1
+				forecolor	1,1,1,1
+				text	"Atk Roll:"
+				textscale	0.4
+			}
+			windowDef dice_hit_text
+			{
+				rect	154,21,51,27
+				visible	1
+				forecolor	1,1,1,1
+				text	"Hit:"
+				textscale	0.4
+			}
+			windowDef dice_hit_yn
+			{
+				rect	200,10,61,48
+				visible	1
+				forecolor	1,1,1,1
+				text	"gui::dice_hit_yn"
+				textscale	0.4
+			}
+			windowDef dice_damage
+			{
+				rect	265,21,96,27
+				visible	1
+				forecolor	1,1,1,1
+				text	"Damage: "
+				textscale	0.4
+			}
+			windowDef dice_damage_n
+			{
+				rect	359,10,78,48
+				visible	1
+				forecolor	1,1,1,1
+				text	"gui::dice_damage_n"
+				textscale	0.4
+			}
+		}
+	}
 }

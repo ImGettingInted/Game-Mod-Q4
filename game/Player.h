@@ -210,6 +210,8 @@ public:
 	int						chaStat = 1;
 
 	int						level = 1;
+	int						profBonus = 2;
+	int						playerXP = 0;
 	void                    SetPlayerClass(int n);
 	void					SetPlayerStat(idStr str, int num);
 	int                     CalculateAC();
@@ -217,7 +219,8 @@ public:
 	idStr					CurrentClass();
 	int						GetStat(idStr stat);
 	int						GetLevel();
-	//void					LevelUp();
+	void					GainXP(int amount);
+	void					LevelUp();
 
 // RITUAL BEGIN
 // squirrel: Mode-agnostic buymenus

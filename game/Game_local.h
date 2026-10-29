@@ -799,6 +799,7 @@ public:
 // RAVEN BEGIN
 // jshepard: update end of level on player hud
 	void					UpdateEndLevel();
+	void					UpdateRolledDice(int rolled, bool brokeAC, int damage);
 // MCG: added whizz-by sound
 	void					CheckPlayerWhizzBy	( idVec3 start, idVec3 end, idEntity* hitEnt, idEntity *attacker );
 // bdube: added hitscan
